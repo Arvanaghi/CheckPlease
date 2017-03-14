@@ -30,6 +30,6 @@ difference = secondTime - firstTime
 puts "Difference in NTP times (should be at least #{ARGV[0].to_i} seconds): #{difference}"
 
 if (difference >= ARGV[0].to_i)
-	puts "Proceed!\n"
+	puts "Proceed!"
 end
 
