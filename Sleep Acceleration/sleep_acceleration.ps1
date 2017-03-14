@@ -16,7 +16,7 @@ $Socket.Connect('us.pool.ntp.org',123)
 $firstTime = [BitConverter]::ToUInt32($NTPTransmit[43..40], 0)
 
 $firstTime -= 2208988800;
-Write-Output "NTP time (seconds) before sleeping: $firstTime"
+Write-Output "NTP time (in seconds) before sleeping: $firstTime"
 
 Write-Output "Attempting to sleep for $($args[0]) seconds..."
 Start-Sleep -s $($args[0])
@@ -35,7 +35,7 @@ $NewSock.Close()
 $secondTime = [BitConverter]::ToUInt32($secondTransmit[43..40], 0)
 
 $secondTime -= 2208988800;
-Write-Output "NTP time (seconds) after sleeping: $secondTime"
+Write-Output "NTP time (in seconds) after sleeping: $secondTime"
 
 $difference = $secondTime - $firstTime
 Write-Output "Difference in NTP times (should be at least $($args[0]) seconds): $difference"
