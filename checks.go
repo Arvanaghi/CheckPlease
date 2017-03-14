@@ -1,1 +1,0 @@
-# Sandbox Evasion checks written in Go
