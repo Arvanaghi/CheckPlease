@@ -27,7 +27,6 @@ sleep(float(sys.argv[1]))
 secondTime = getNTPTime()
 print("NTP time (UTC) after sleeping: " + str(secondTime))
 
-
 difference = secondTime - firstTime
 print("Difference in NTP times (should be at least " + sys.argv[1] + " seconds): " + str(difference.seconds))
 if difference.seconds >= float(sys.argv[1]):
