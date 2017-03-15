@@ -1,7 +1,9 @@
-# ***
-# PowerShell sleep acceleration check by querying NTP server
-# Module written by Brandon Arvanaghi (@arvanaghi)
-# ***
+<#
+    PowerShell sleep acceleration checker via NTP cluster queries
+    Module written by Brandon Arvanaghi 
+    Website: arvanaghi.com 
+    Twitter: @arvanaghi
+#>
 
 [Byte[]]$NTPTransmit=,1*48;
 $NTPTransmit[0]=0x1B;

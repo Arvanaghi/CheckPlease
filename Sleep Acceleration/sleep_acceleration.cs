@@ -1,6 +1,8 @@
 /*
-*** C# sleep acceleration check by querying NTP server
-*** Module written by Brandon Arvanaghi (@arvanaghi)
+    C# sleep acceleration checker via NTP cluster queries
+    Module written by Brandon Arvanaghi 
+    Website: arvanaghi.com 
+    Twitter: @arvanaghi
 */
 
 using System;
