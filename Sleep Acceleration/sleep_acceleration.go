@@ -1,6 +1,6 @@
 /*
-	Go sleep acceleration check by querying NTP server
-	Module written by Brandon Arvanaghi (@arvanaghi)
+***	Go sleep acceleration check by querying NTP server
+***	Module written by Brandon Arvanaghi (@arvanaghi)
 */ 
 
 package main
