@@ -10,9 +10,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace CheckPlease
+namespace SleepAccelerationCheck
 {
-    class SleepAccelerationCheck
+    class Program
     {
 
         public static UInt32 GetNTPTime()
