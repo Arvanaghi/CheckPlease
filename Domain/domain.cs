@@ -13,7 +13,7 @@ namespace DomainName
     {
         static void Main(string[] args)
         {
-            if (args[0] == System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName) {
+            if (string.Equals(args[0], System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName, StringComparison.CurrentCultureIgnoreCase)) {
                 Console.WriteLine("Proceed!");
             }
             Console.ReadKey();
