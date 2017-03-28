@@ -5,7 +5,6 @@
     Twitter: @arvanaghi
 */
 
-
 using System;
 
 namespace DomainName
@@ -14,10 +13,8 @@ namespace DomainName
     {
         static void Main(string[] args)
         {
-            if (args[0] == System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName)
-            {
+            if (args[0] == System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName) {
                 Console.WriteLine("Proceed!");
-
             }
             Console.ReadKey();
         }
