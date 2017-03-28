@@ -1,19 +1,25 @@
+/*
+    C# domain checker
+    Module written by Brandon Arvanaghi 
+    Website: arvanaghi.com 
+    Twitter: @arvanaghi
+*/
+
+
 using System;
 
-namespace CsharpChecks
+namespace DomainName
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string JzubIh = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            string[] DmkyQqzsq = JzubIh.Split('\\');
-            Console.WriteLine("Enter username:"); // Prompt
-            string provided_name = Console.ReadLine().ToLower(); // Get string from user
-            if (System.Environment.MachineName.ToLower() != System.Environment.UserDomainName.ToLower()) {
+            if (args[0] == System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName)
             {
-                Console.Write("Put Code Here");
+                Console.WriteLine("Proceed!");
+
             }
+            Console.ReadKey();
         }
     }
-}   
+}
