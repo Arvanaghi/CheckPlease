@@ -1,5 +1,5 @@
 #
-#   Python Windows Registry Key and Value Checker
+#   Windows Registry Key and Value Checker, Python
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
@@ -10,12 +10,9 @@ from winreg import *
 EvidenceOfSandbox = []
 
 def searchForSandboxStrings(registryValue):
-	print("HEY")
 	sandboxStrings = ["vmware","virtualbox","qemu","xen"]
 	for sandboxString in sandboxStrings:
-		print(sandboxString)
 		if registryValue.find(sandboxString):
-			print("WOAH!!!")
 			EvidenceOfSandbox.append(registryValue)
 			return
 
@@ -36,19 +33,15 @@ for HKLM_Key in HKLM_Keys_To_Check_Exist:
 		pass # Do nothing, no evidence of sandbox
 
 for HKLM_Key in HKLM_Keys_With_Values_To_Parse:
-	print(HKLM_Key)
 	try:
 		Opened_HKLM_Key = OpenKey(HKLM, HKLM_Key)
-		print("DEBUG1")
-		keyVal = QueryValueEx(key, "Count")
-		print(keyVal[0])
+		keyVal = QueryValueEx(Opened_HKLM_Key, "0")
 		searchForSandboxStrings(keyVal[0].lower())
 	except:
 		pass # Do nothing, no evidence of sandbox
 
+# Check if any evidence of Sandbox present
 if not EvidenceOfSandbox:
 	print("Proceed!")
-else:
-	print(EvidenceOfSandbox)
 
 
