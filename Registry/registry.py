@@ -1,3 +1,10 @@
+#
+#   Python Windows Registry Key and Value Checker
+#   Module written by Brandon Arvanaghi
+#   Website: arvanaghi.com 
+#   Twitter: @arvanaghi
+#
+
 from winreg import *
 
 EvidenceOfSandbox = []
