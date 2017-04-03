@@ -1,7 +1,7 @@
 #
 #   Windows Running Process and Loaded DLL Checker, PowerShell
-#	Ensures more than user-supplied N processes are running (defaults to 50)
-#	Ensures no sandbox indicative process or DLL loaded
+#		Ensures more than user-supplied N processes are running (defaults to 50)
+#		Ensures no sandbox indicative process or DLL loaded
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
