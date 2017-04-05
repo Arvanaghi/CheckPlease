@@ -34,7 +34,6 @@ func main() {
 	`C:\windows\System32\vboxservice.exe`, `C:\windows\System32\vboxtray.exe`,
 	`C:\windows\System32\VBoxControl.exe`}
 
-
 	for _, FilePath := range FilePathsToCheck {
 	  	if _, err := os.Stat(FilePath); err == nil {
 	  		EvidenceOfSandbox = append(EvidenceOfSandbox, FilePath)
