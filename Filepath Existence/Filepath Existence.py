@@ -28,7 +28,6 @@ r'C:\windows\System32\vboxservice.exe', r'C:\windows\System32\vboxtray.exe',
 r'C:\windows\System32\VBoxControl.exe']
 
 for FilePath in FilePathsToCheck:
-	print(FilePath)
 	if os.path.isfile(FilePath):
 		EvidenceOfSandbox.append(FilePath)
 
