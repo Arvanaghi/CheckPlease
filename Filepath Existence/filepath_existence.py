@@ -33,5 +33,3 @@ for FilePath in FilePathsToCheck:
 
 if not EvidenceOfSandbox:
 	print("Proceed!")
-else:
-	print(EvidenceOfSandbox)
