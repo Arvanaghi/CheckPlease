@@ -1,7 +1,5 @@
 use Win32::API;
 
-my $username = Win32::LoginName;
-
-if (lc($username) eq join(" ", @ARGV)) {
+if (lc(Win32::LoginName) eq lc(join(" ", @ARGV))) {
     print "Proceed!\n"
 }
