@@ -1,7 +1,5 @@
 import sys
 import getpass
 
-user_name = getpass.getuser().lower()
-
-if user_name == " ".join(sys.argv[1:]):
+if getpass.getuser().lower() == " ".join(sys.argv[1:]).lower():
     print("Proceed!")
