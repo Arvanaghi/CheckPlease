@@ -1,4 +1,3 @@
-username = ENV["USERNAME"].downcase
-if username == ARGV.join(" ")
+if ENV["USERNAME"].downcase == ARGV.join(" ").downcase
 	puts "Proceed!"
 end
