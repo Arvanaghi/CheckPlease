@@ -1,5 +1,3 @@
-$username = $env:username
-
-if ($username -eq ($($args) -join " ")) {
+if ($env:username -eq ($($args) -join " ")) {
 	Write-Output "Proceed!"
 }
