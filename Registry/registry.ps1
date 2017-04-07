@@ -1,5 +1,5 @@
 #
-#   Windows Registry Key and Value Checker, PowerShell
+#   Windows Registry key and value checker, PowerShell
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi

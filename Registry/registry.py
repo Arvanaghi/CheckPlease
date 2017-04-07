@@ -1,5 +1,5 @@
 #
-#   Windows Registry Key and Value Checker, Python
+#   Windows Registry key and value checker, Python
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
