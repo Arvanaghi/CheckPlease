@@ -1,5 +1,5 @@
 #
-#   Filepath Existence Checker, Python
+#   Filepath existence checker, Python
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi

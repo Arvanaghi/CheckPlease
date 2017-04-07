@@ -1,5 +1,5 @@
 #
-#   Filepath Existence Checker, Ruby
+#   Filepath existence checker, Ruby
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi

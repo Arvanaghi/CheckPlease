@@ -1,5 +1,5 @@
 /*
-    Filepath Existence Checker, C#
+    Filepath existence checker, C#
     Module written by Brandon Arvanaghi 
     Website: arvanaghi.com 
     Twitter: @arvanaghi

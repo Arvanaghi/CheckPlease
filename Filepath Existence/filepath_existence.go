@@ -1,5 +1,5 @@
 /*
-    Filepath Existence Checker, Go
+    Filepath existence checker, Go
     Module written by Brandon Arvanaghi
     Website: arvanaghi.com 
     Twitter: @arvanaghi
