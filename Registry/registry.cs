@@ -10,7 +10,7 @@ using System.IO;
 using System.Collections.Generic;
 using Microsoft.Win32;
 
-namespace Registry {
+namespace RegistryChecker {
 
     class Program {
 
