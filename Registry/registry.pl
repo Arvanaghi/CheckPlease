@@ -30,7 +30,7 @@ my @HKLM_Keys_With_Values_To_Check = (q{SYSTEM\\ControlSet001\\Services\\Disk\\E
 
 foreach $HKLM_Key (@HKLM_Keys_To_Check_Exist) {
   $openedKey = new Win32::TieRegistry
-  'HKEY_LOCAL_MACHINE\\'.$HKLM_Key,{ Access=>Win32::TieRegistry::KEY_READ()|0x0200, Delimiter=>'\\' };
+  'HKEY_LOCAL_MACHINE\\'.$HKLM_Key,{ Access=>Win32::TieRegistry::KEY_READ()|0x100, Delimiter=>'\\' };
   if ($openedKey) {
     push(@EvidenceOfSandbox, "HKLM:\\" . $HKLM_Key);
   }
@@ -40,7 +40,7 @@ foreach $HKLM_Key (@HKLM_Keys_With_Values_To_Check) {
   ($regVal, $regKey, undef) = fileparse($HKLM_Key);
  
   $openedKey = new Win32::TieRegistry
-  'HKEY_LOCAL_MACHINE\\'.$regKey,{ Access=>Win32::TieRegistry::KEY_READ()|0x0200, Delimiter=>'\\' };
+  'HKEY_LOCAL_MACHINE\\'.$regKey,{ Access=>Win32::TieRegistry::KEY_READ()|0x100, Delimiter=>'\\' };
   if ($openedKey) {
       $regString = $openedKey->GetValue($regVal);
       foreach $sandboxString (@sandboxStrings) {
