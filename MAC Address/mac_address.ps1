@@ -1,5 +1,5 @@
 #
-#   MAC Address Checker, PowerShell
+#   MAC address checker, PowerShell
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi

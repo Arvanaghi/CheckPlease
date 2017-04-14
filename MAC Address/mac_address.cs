@@ -11,8 +11,10 @@ using System.Text.RegularExpressions;
 using System.Net.NetworkInformation;
 
 namespace macAddressChecker {
-    class Program {
-        static void Main(string[] args) {
+    class Program
+    {
+        static void Main(string[] args)
+        {
             List<string> EvidenceOfSandbox = new List<string>();
 
             string[] badMacAddresses = {@"000C29", @"001C14", @"005056", @"000569", @"080027"};
@@ -34,6 +36,8 @@ namespace macAddressChecker {
                 Console.Write(string.Join("\n", EvidenceOfSandbox));
                 Console.ReadKey();
             }
+
         }
+
     }
 }
