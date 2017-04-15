@@ -27,8 +27,7 @@ namespace MinimumNumBrowsersChecker
             if (browserCount >= 2){
                 Console.WriteLine("Proceed!");
                 Console.ReadKey();
-            }
-            else{
+            } else {
                 Console.WriteLine("Number of Browsers: {0}", browserCount);
                 Console.ReadKey();
             }
