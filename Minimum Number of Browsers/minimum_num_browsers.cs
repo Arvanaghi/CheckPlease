@@ -8,12 +8,9 @@
 using System;
 using Microsoft.Win32;
 
-namespace MinimumNumBrowsersChecker
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace MinimumNumBrowsersChecker {
+    class Program {
+        static void Main(string[] args) {
             int browserCount = 0;
             string[] browserKeys = {@"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe", @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\iexplore.exe", @"SOFTWARE\Mozilla"};
 
