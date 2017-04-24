@@ -16,5 +16,5 @@ $usbCount = (Get-ChildItem HKLM:\SYSTEM\ControlSet001\Enum\USBSTOR).Name.Count
 if ($usbCount -ge $MinimumUSBHistory) {
 	Write-Output "Proceed!"
 } else {
-	Write-Output "Number of USB Devices Ever Mounted: $usbCount"
+	Write-Output "Number of USB devices ever mounted: $usbCount"
 }
