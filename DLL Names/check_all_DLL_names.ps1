@@ -22,4 +22,6 @@ ForEach ($LoadedDLL in $LoadedDLLs) {
 
 if ($EvidenceOfSandbox.count -eq 0) {
 	Write-Output "Proceed!"
+} else {
+	$EvidenceOfSandbox
 }
