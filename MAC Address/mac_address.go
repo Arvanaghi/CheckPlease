@@ -21,11 +21,11 @@ func main() {
 
 	NICs, _ := net.Interfaces()
 	for _, NIC := range NICs {
-        for _, badMacAddress := range badMacAddresses {
-            if strings.Contains(strings.ToLower(NIC.HardwareAddr.String()), strings.ToLower(badMacAddress)) {
-                EvidenceOfSandbox = append(EvidenceOfSandbox, NIC.HardwareAddr)
-            }
-        }   
+		for _, badMacAddress := range badMacAddresses {
+		    if strings.Contains(strings.ToLower(NIC.HardwareAddr.String()), strings.ToLower(badMacAddress)) {
+			EvidenceOfSandbox = append(EvidenceOfSandbox, NIC.HardwareAddr)
+		    }
+		}   
 	}
 
     if len(EvidenceOfSandbox) == 0 {
