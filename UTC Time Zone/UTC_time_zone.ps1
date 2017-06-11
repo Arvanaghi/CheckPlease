@@ -5,10 +5,11 @@
 #   Twitter: @arvanaghi
 #
 
-$timezone = [System.TimeZone]::CurrentTimeZone.StandardName
+$standardTimezone = [System.TimeZone]::CurrentTimeZone.StandardName
+$daylightTimezone = [System.TimeZone]::CurrentTimeZone.DaylightName
 
-if ($timezone -eq "Coordinated Universal Time") {
+if ($standardTimezone -eq "Coordinated Universal Time" -or $daylightTimezone -eq "Coordinated Universal Time") {
 	Write-Output "The time zone is Coordinated Universal Time (UTC), do not proceed."
 } else {
-	Write-Output "The time zone is $timezone. Proceed!"
+	Write-Output "The time zone is $standardTimezone. Proceed!"
 }
