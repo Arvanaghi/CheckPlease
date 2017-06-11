@@ -1,5 +1,5 @@
 #
-#   Checks if time zone UTC, PowerShell
+#   Checks if time zone is Coordinated Universal Time (UTC), PowerShell
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi

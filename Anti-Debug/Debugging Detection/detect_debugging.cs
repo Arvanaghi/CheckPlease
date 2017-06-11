@@ -7,10 +7,9 @@
 
 using System;
 
-namespace DebugCheck {
+namespace DetectDebugging {
     class Program {
-        static void Main(string[] args)
-        {
+        static void Main(string[] args) {
             if (System.Diagnostics.Debugger.IsAttached) {
                 Console.WriteLine("A debugger is present, do not proceed.");
             } else {
