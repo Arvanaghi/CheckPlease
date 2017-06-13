@@ -6,7 +6,7 @@
 #
 
 if ($($args[0]).count -eq 0) {
-	$MinimumUSBHistory = 1
+	$MinimumUSBHistory = 2
 } else {
 	$MinimumUSBHistory = $($args[0])
 }
