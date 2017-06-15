@@ -13,7 +13,7 @@ int main(int argc, char** argv[]) {
 	DWORD ret = GetTimeZoneInformation(&timeZone);
 
 	if (ret == TIME_ZONE_ID_INVALID) {
-		printf("Unable to retrieved time zone informaiton, exiting.\n");
+		printf("Unable to retrieve time zone informaiton, exiting.\n");
 		getchar();
 		exit(-1);
 	} else {
