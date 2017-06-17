@@ -1,5 +1,5 @@
 #
-#   Prompts the user with a dialog box before exeucting, Ruby
+#   Prompts user with dialog box and waits for response before executing, Ruby
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
@@ -10,7 +10,7 @@ require "Win32API"
 dialogBoxTitle = "CheckPlease by @arvanaghi and @ChrisTruncer";
 dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!"
 
-if !ARGV.empty?
+if ARGV.length == 2
   dialogBoxTitle = ARGV[0]
   dialogBoxMessage = ARGV[1]
 end
