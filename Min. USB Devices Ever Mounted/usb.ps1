@@ -5,7 +5,7 @@
 #   Twitter: @arvanaghi
 #
 
-if ($($args[0]).count -eq 0) {
+if ($Args.count -eq 0) {
 	$MinimumUSBHistory = 2
 } else {
 	$MinimumUSBHistory = $($args[0])
@@ -14,7 +14,7 @@ if ($($args[0]).count -eq 0) {
 $usbCount = (Get-ChildItem HKLM:\SYSTEM\ControlSet001\Enum\USBSTOR).Name.Count
 
 if ($usbCount -ge $MinimumUSBHistory) {
-	Write-Output "Proceed!"
+	Write-Output "$usbCount USB devices have ever been mounted. Proceed!"
 } else {
-	Write-Output "Number of USB devices ever mounted: $usbCount"
+	Write-Output "Only $usbCount USB devices have ever been mounted. Do not proceed."
 }
