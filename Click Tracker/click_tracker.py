@@ -1,5 +1,5 @@
 #
-#   Python mouse click tracker
+#   Waits until N mouse clicks occur before executing (default: 10), Python
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
