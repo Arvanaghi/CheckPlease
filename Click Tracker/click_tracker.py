@@ -8,11 +8,13 @@
 import win32api
 import sys
 
-current_state_left_click = win32api.GetKeyState(1)
-current_state_right_click = win32api.GetKeyState(2)
 count = 0
+minClicks = 10
 
-while count < int(sys.argv[1]):
+if len(sys.argv) == 2:
+	minClicks = int(sys.argv[1])
+
+while count < minClicks:
 	new_state_left_click = win32api.GetAsyncKeyState(1)
 	new_state_right_click = win32api.GetAsyncKeyState(2)
 
@@ -21,4 +23,4 @@ while count < int(sys.argv[1]):
 	if new_state_right_click % 2 == 1:
 		count += 1
 
-print("Proceed!")
+print("Now that the user has clicked {} times, we may proceed with malware execution!".format(minClicks))
