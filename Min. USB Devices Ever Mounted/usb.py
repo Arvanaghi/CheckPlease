@@ -1,5 +1,5 @@
 #
-#   Minimum number of USB devices ever mounted,  Python
+#   Minimum number of USB devices ever mounted, Python
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
