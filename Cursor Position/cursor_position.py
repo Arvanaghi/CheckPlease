@@ -1,5 +1,5 @@
 #
-#   Checks if cursor is in same position after sleeping N seconds, Python
+#   Checks if cursor is in same position after sleeping N seconds (default: 20 min), Python
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
@@ -9,7 +9,7 @@ from ctypes import Structure, windll, byref, c_ulong
 from time import sleep
 import sys
 
-secs = 3;
+secs = 1200;
 if len(sys.argv) == 2:
 	secs = float(sys.argv[1])
 
