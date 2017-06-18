@@ -11,15 +11,15 @@ import sys
 
 secs = 1200;
 if len(sys.argv) == 2:
-	secs = float(sys.argv[1])
+  secs = float(sys.argv[1])
 
 class tagPOINT(Structure):
     _fields_ = [("x", c_ulong), ("y", c_ulong)]
 
 def getCoords():
-	coord = tagPOINT()
-	windll.user32.GetCursorPos(byref(coord))
-	return coord
+  coord = tagPOINT()
+  windll.user32.GetCursorPos(byref(coord))
+  return coord
 
 firstCoord = getCoords()
 print("x: " + str(firstCoord.x) + ", y: " + str(firstCoord.y))
@@ -30,6 +30,6 @@ secondCoord = getCoords()
 print("x: " + str(secondCoord.x) + ", y: " + str(secondCoord.y))
 
 if firstCoord.x - secondCoord.x == 0 and firstCoord.y - secondCoord.y == 0:
-	print("The cursor is in the same position, do not proceed.")
+  print("The cursor has not moved in the last {} seconds. Do not proceed.".format(secs))
 else:
-	print("The cursor has moved. Proceed!")
+  print("The cursor is not in the same position as it was {} seconds ago. Proceed!".format(secs))
