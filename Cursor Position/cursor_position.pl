@@ -7,7 +7,7 @@
 
 use Win32::API;
 
-my $secs = 1;
+my $secs = 1200;
 if (@ARGV == 1) {
 	$secs = $ARGV[0];
 }
