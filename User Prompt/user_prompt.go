@@ -19,10 +19,10 @@ func main() {
 	var dialogBoxTitle = "CheckPlease by @arvanaghi and @ChrisTruncer";
 	var dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!"
 
-  if (len(os.Args) == 3) {
-    dialogBoxTitle = os.Args[1]
-    dialogBoxMessage = os.Args[2]
-  }
+	if (len(os.Args) == 3) {
+		dialogBoxTitle = os.Args[1]
+		dialogBoxMessage = os.Args[2]
+	}
 
 	var user32dll = syscall.NewLazyDLL("user32.dll")
 	var messageBoxW = user32dll.NewProc("MessageBoxW")
