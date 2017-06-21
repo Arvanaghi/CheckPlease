@@ -7,13 +7,15 @@
 #
 
 if ($($args[0]).count -eq 0) {
-	$MinimumNumberOfProcesses = 50
+	$minNumProcesses = 50
 } else {
-	$MinimumNumberOfProcesses = $($args[0])
+	$minNumProcesses = $($args[0])
 }
 
-$RunningProcesses = Get-Process
+$runningProcesses = (Get-Process).count
 
-if ($RunningProcesses.count -ge $MinimumNumberOfProcesses) {
-	Write-Output "Proceed!"
+if ($runningProcesses -ge $minNumProcesses) {
+	Write-Output "There are $runningProcesses processes running on the system, which satisfies the minimum you set of $minNumProcesses. Proceed!"
+} else {
+	Write-Output "Only $runningProcesses processes are running on the system, which is less than the minimum you set of $minNumProcesses. Do not proceed."
 }
