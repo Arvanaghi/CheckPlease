@@ -1,5 +1,5 @@
 #
-#   Windows Minimum Number of Running Processes, PowerShell
+#   Ensures there are more than N processes currently running on the system (default: 50), PowerShell
 #   Ensures at least N processes running on the system (defaults to 50)
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 

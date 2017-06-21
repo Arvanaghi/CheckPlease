@@ -1,5 +1,5 @@
 /*
-	Minimum Number of Running Processes, C
+	Ensures there are more than N processes currently running on the system (default: 50), C
 	Ensures at least N processes running on the system (defaults to 50)
 	Module written by Brandon Arvanaghi
 	Website: arvanaghi.com
@@ -31,7 +31,7 @@ int main(int argc, char **argv[]) {
 	// Calculate how many PIDs returned
 	numProcessesFound = cbNeeded / sizeof(DWORD);
 
-	if (numProcessesFound > minimumNumberOfProcesses) {
+	if (numProcessesFound >= minimumNumberOfProcesses) {
 		printf("Proceed!\n");
 	} else {
 		printf("%d processes running on this host.\n", numProcessesFound);
