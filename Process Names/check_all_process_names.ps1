@@ -22,7 +22,8 @@ ForEach ($RunningProcess in $RunningProcesses) {
 }
 
 if ($EvidenceOfSandbox.count -eq 0) {
-	Write-Output "Proceed!"
+	Write-Output "No sandbox-indicative process name was found running on the system. Proceed!"
 } else {
+	Write-Output "The following running processes suggest we are running in a sandbox. Do not proceed." 
 	$EvidenceOfSandbox
 }

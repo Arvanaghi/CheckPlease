@@ -76,7 +76,7 @@ func main() {
 	if len(EvidenceOfSandbox) == 0 {
 		fmt.Println("No sandbox-indicative process name was found running on the system. Proceed!")
 	} else {
-		fmt.Printf("The following offending process names were found. Do not proceed.\n%v\n", EvidenceOfSandbox)
+		fmt.Printf("The following running processes suggest we are running in a sandbox. Do not proceed.\n%v\n", EvidenceOfSandbox)
 	}
 
 }
