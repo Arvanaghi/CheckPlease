@@ -1,5 +1,5 @@
 /*
-    Checks if there are more than a certain number of processes running on the system (default: 50), Go
+    Ensures there are more than N processes currently running on the system (default: 50), Go
     Module written by Brandon Arvanaghi 
     Website: arvanaghi.com 
     Twitter: @arvanaghi
