@@ -11,15 +11,15 @@
 #include <psapi.h>
 
 int main(int argc, char **argv[]) {
-	int minimumNumberOfProcesses = 50;
+	int minNumProcesses = 50;
 
 	if (argc > 1) {
-		minimumNumberOfProcesses = atoi(argv[1]);
+		minNumProcesses = atoi(argv[1]);
 	}
 
 	DWORD loadedProcesses[1024];
 	DWORD cbNeeded;
-	DWORD numProcessesFound;
+	DWORD runningProcesses;
 
 	// Get all PIDs
 	if (!EnumProcesses(loadedProcesses, sizeof(loadedProcesses), &cbNeeded)) {
@@ -29,12 +29,12 @@ int main(int argc, char **argv[]) {
 	}
 
 	// Calculate how many PIDs returned
-	numProcessesFound = cbNeeded / sizeof(DWORD);
+	runningProcesses = cbNeeded / sizeof(DWORD);
 
-	if (numProcessesFound >= minimumNumberOfProcesses) {
-		printf("Proceed!\n");
+	if (runningProcesses >= minNumProcesses) {
+		printf("There are %d processes running on the system, which satisfies the minimum you set of %d. Proceed!\n", runningProcesses, minNumProcesses);
 	} else {
-		printf("%d processes running on this host.\n", numProcessesFound);
+		printf("Only %d processes are running on the system, which is less than the minimum you set of %d. Do not proceed.\n", runningProcesses, minNumProcesses);
 	}
 
 	getchar();
