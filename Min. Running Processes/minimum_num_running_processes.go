@@ -74,7 +74,7 @@ func main() {
 	}
 
 	if (runningProcesses >= minRunningProcesses) {
-		fmt.Printf("There are %d processes running on the system, which is more than the minimum you set of %d. Proceed!\n", runningProcesses, minRunningProcesses)
+		fmt.Printf("There are %d processes running on the system, which satisfies the minimum you set of %d. Proceed!\n", runningProcesses, minRunningProcesses)
 	} else {
 		fmt.Printf("Only %d processes are running on the system, which is less than the minimum you set of %d. Do not proceed.\n", runningProcesses, minRunningProcesses)
 	}
