@@ -8,7 +8,7 @@
 require 'win32ole'
 
 EvidenceOfSandbox = Array.new
-sandboxProcesses = ["vmsrvc", "tcpview", "wireshark", "visual basic", "fiddler", "vmware", "vbox", "process explorer", "autoit", "vboxtray", "vmtools", "vmrawdsk", "vmusbmouse", "vmvss", "vmscsi", "vmxnet", "vmx_svga", "vmmemctl", "df5serv", "vboxservice", "vmhgfs"]
+sandboxProcesses = ['vmsrvc', 'tcpview', 'wireshark', 'visual basic', 'fiddler', 'vmware', 'vbox', 'process explorer', 'autoit', 'vboxtray', 'vmtools', 'vmrawdsk', 'vmusbmouse', 'vmvss', 'vmscsi', 'vmxnet', 'vmx_svga', 'vmmemctl', 'df5serv', 'vboxservice', 'vmhgfs']
 
 runningProcesses = WIN32OLE.connect("winmgmts://").ExecQuery("SELECT * FROM Win32_Process")
 
