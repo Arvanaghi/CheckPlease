@@ -17,4 +17,6 @@ if len(sys.argv) == 2:
 _, runningProcesses = win32pdh.EnumObjectItems(None,None,'process', win32pdh.PERF_DETAIL_WIZARD)
 
 if len(runningProcesses) >= int(MinimumNumberOfProcesses):
-	print("Proceed!")
+	print("There are {0} processes running on the system, which satisfies the minimum you set of {1}. Proceed!".format(len(runningProcesses), MinimumNumberOfProcesses))
+else:
+	print("Only {0} processes are running on the system, which is less than the minimum you set of {1}. Do not proceed.".format(len(runningProcesses), MinimumNumberOfProcesses))
