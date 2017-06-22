@@ -31,7 +31,8 @@ for FilePath in FilePathsToCheck:
 	if os.path.isfile(FilePath):
 		EvidenceOfSandbox.append(FilePath)
 
-if not EvidenceOfSandbox:
-	print("No files exist on disk that suggest we are running in a sandbox. Proceed!")
-else
+if EvidenceOfSandbox:
 	print("The following files on disk suggest we are running in a sandbox. Do not proceed.\n{0}".format(EvidenceOfSandbox))
+else:
+	print("No files exist on disk that suggest we are running in a sandbox. Proceed!")
+	
