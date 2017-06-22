@@ -41,8 +41,9 @@ func main() {
 	}
 
 	if len(EvidenceOfSandbox) == 0 {
-		fmt.Println("Proceed!")
+		fmt.Println("No files exist on disk that suggest we are running in a sandbox. Proceed!")
 	} else {
+		fmt.Println("The following files on disk suggest we are running in a sandbox. Do not proceed.")
 		fmt.Println(EvidenceOfSandbox)
 	}
 

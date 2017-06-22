@@ -32,7 +32,8 @@ foreach $FilePath (@FilePathsToCheck) {
 }
 
 if (!@EvidenceOfSandbox) {
-	print "Proceed!\n";
+	print "No files exist on disk that suggest we are running in a sandbox. Proceed!\n";
 } else {
+	print "The following files on disk suggest we are running in a sandbox. Do not proceed.\n";
 	print join(", ", @EvidenceOfSandbox), "\n";
 }

@@ -32,5 +32,8 @@ ForEach ($FilePath in $FilePathsToCheck) {
 }
 
 if ($EvidenceOfSandbox.count -eq 0) {
-	Write-Output "Proceed!"
+	Write-Output "No files exist on disk that suggest we are running in a sandbox. Proceed!"
+} else {
+	Write-Output "The following files on disk suggest we are running in a sandbox. Do not proceed."
+	$EvidenceOfSandbox
 }
