@@ -17,7 +17,7 @@ for process in runningProcesses do
 		if process.Name.downcase().include? sandboxProcess
 			EvidenceOfSandbox.push(process.Name)
 		end
-    end
+	end
 end
 
 if EvidenceOfSandbox.empty?
