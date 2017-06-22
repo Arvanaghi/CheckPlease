@@ -63,7 +63,7 @@ int main(void) {
 	} // for each process
 
 	if (evidenceCount == 0) {
-		printf("Proceed!\n");
+		printf("No sandbox-indicative DLLs were discovered loaded in any accessible running process. Proceed!\n");
 	}
 
 	getchar();

@@ -20,8 +20,9 @@ ForEach ($LoadedDLL in $LoadedDLLs) {
 	}
 }
 
-if ($EvidenceOfSandbox.count -eq 0) {
-	Write-Output "Proceed!"
-} else {
+if ($EvidenceOfSandbox) {
+	Write-Output "The following sandbox-indicative DLLs were discovered loaded in processes running on the system. Do not proceed."
 	$EvidenceOfSandbox
+} else {
+	Write-Output "No sandbox-indicative DLLs were discovered loaded in any accessible running process. Proceed!"
 }
