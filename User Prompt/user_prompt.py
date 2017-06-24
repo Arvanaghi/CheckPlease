@@ -15,7 +15,7 @@ if len(sys.argv) == 3:
 	dialogBoxTitle = sys.argv[1]
 	dialogBoxMessage = sys.argv[2]
 
-MessageBox = ctypes.windll.user32.MessageBoxA
+MessageBox = ctypes.windll.user32.MessageBoxW
 MessageBox(None, dialogBoxMessage, dialogBoxTitle, 0)
 
 print("Now that the user has clicked \"OK\" or closed the dialog box, we will proceed with malware execution!")
