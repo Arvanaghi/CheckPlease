@@ -16,7 +16,6 @@ for pid in allPids:
     try:
         hProcess = win32api.OpenProcess(0x0410, 0, pid)
         try:
-            print(win32process.GetModuleFileNameEx(hProcess, 0))
             curProcessDLLs = win32process.EnumProcessModules(hProcess)
             for dll in curProcessDLLs:
                 dllName = str(win32process.GetModuleFileNameEx(hProcess, dll)).lower()
