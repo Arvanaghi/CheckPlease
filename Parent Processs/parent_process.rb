@@ -19,6 +19,6 @@ for process in processes do
   if process.CommandLine.downcase().include? expectedParentProc
       puts "As expected, the parent process for this process is #{process.CommandLine}. Proceed!"
     else
-      puts "The parent process for this process is #{process.commandline}, not \"#{expectedParentProc}\" as you expected. Do not proceed."
+      puts "The parent process for this process is \"#{process.commandline}\", not \"#{expectedParentProc}\" as you expected. Do not proceed."
     end
 end
