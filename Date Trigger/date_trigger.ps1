@@ -6,14 +6,13 @@
 #
 
 if ($Args.count -eq 0) {
-	Write-Output "You must provide a date in format MM/DD/YYYY"
+	Write-Output "You must provide a date in format mm/dd/yyyy."
 	Exit
 } else {
 	$triggerDate = $($args[0])
 }
 
 while ((Get-Date) -lt (Get-Date $triggerDate)) {
-	Write-Output "yes"
 	Start-Sleep -s 86340
 }
 
