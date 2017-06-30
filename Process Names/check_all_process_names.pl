@@ -14,7 +14,7 @@ my $runningProcesses = Win32::OLE->GetObject("winmgmts:\\\\localhost\\root\\CIMV
 
 foreach my $process (in $runningProcesses) {
 	foreach $sandboxProcess (@sandboxProcesses) {
-		if (index($process->{Name}, $sandboxProcess) != -1) {
+		if (index(lc($process->{Name}), lc($sandboxProcess)) != -1) {
 			if (!(grep $_ eq $process->{Name}, @EvidenceOfSandbox)) {
 				push(@EvidenceOfSandbox, $process->{Name});
 			}
