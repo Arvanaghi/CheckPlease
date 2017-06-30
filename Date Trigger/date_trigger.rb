@@ -12,7 +12,9 @@ if ARGV.length != 1
 	exit(1)
 end
 
-while (Time.now.to_date > Date.strptime(ARGV[0], "%m/%d/%Y").to_date)
+triggerDate = Date.strptime(ARGV[0], "%m/%d/%Y").to_date
+
+while (Time.now.to_date < triggerDate)
 	sleep(86340)
 end
 
