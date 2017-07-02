@@ -19,4 +19,4 @@ else:
 if os.path.basename(__file__) == expectedFileName:
   print("The file name is {} as expected. Proceed!".format(expectedFileName))
 else:
-  print("The file name {0}, and not {1} as expected. Do not proceed.".format(os.path.basename(__file__), expectedFileName))
+  print("The file name {0}, not {1} as expected. Do not proceed.".format(os.path.basename(__file__), expectedFileName))
