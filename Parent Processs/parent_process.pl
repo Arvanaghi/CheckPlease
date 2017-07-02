@@ -27,4 +27,3 @@ if (index(lc($parentProcess), lc($expectParentProc)) != -1) {
 } else {
 	print("The parent process for this process is \"$parentProcess\", not \"$expectParentProc\" as you expected. Do not proceed.\n")
 }
-
