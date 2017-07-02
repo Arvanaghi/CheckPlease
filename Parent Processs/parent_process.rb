@@ -5,7 +5,6 @@
 #   Twitter: @arvanaghi
 #
 
-include Process
 require 'win32ole'
 
 expectedParentProc = "firefox"
