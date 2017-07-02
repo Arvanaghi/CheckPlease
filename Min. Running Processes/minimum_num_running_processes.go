@@ -69,7 +69,7 @@ func main() {
 	}
 
 	runningProcesses := 0
-	for _, exe := range exeNames {
+	for range exeNames {
 		runningProcesses += 1
 	}
 
