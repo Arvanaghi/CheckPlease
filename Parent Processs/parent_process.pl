@@ -25,5 +25,5 @@ foreach my $parentProcessObj (in $parentProcessCol) { $parentProcess = $parentPr
 if (index(lc($parentProcess), lc($expectParentProc)) != -1) {
 	print "As expected, the parent process for this process is \"$parentProcess\". Proceed!\n";
 } else {
-	print("The parent process for this process is \"$parentProcess\", not \"$expectParentProc\" as you expected. Do not proceed.\n")
+	print "The parent process for this process is \"$parentProcess\", not \"$expectParentProc\" as you expected. Do not proceed.\n"
 }
