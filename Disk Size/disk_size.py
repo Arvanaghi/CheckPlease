@@ -1,6 +1,5 @@
 #
 #   Minimum disk size checker (default: 50 GB), Python
-#   Ensures at least N processes running on the system (defaults to 50)
 #   Module written by Brandon Arvanaghi
 #   Website: arvanaghi.com 
 #   Twitter: @arvanaghi
@@ -12,7 +11,7 @@ import sys
 minDiskSizeGB = 50
 
 if len(sys.argv) > 1:
-    minDiskSizeGB = int(sys.argv[1])
+    minDiskSizeGB = float(sys.argv[1])
 
 _, diskSizeBytes, _ = win32api.GetDiskFreeSpaceEx()
 
