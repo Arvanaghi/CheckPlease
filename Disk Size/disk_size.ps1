@@ -11,10 +11,10 @@ if ($Args.count -eq 0) {
   $minDiskSizeGB = $($args[0])
 }
 
-$diskSize = (GWMI -Class Win32_LogicalDisk | Measure-Object -Sum Size | Select-Object -Expand Sum) / 1073741824 
+$diskSizeGB = (GWMI -Class Win32_LogicalDisk | Measure-Object -Sum Size | Select-Object -Expand Sum) / 1073741824 
 
-if ($diskSize -gt $minDiskSizeGB) {
-  Write-Output "The disk size of this host is $diskSize GB, which is greater than the minimum you set of $minDiskSizeGB GB. Proceed!"
+if ($diskSizeGB -gt $minDiskSizeGB) {
+  Write-Output "The disk size of this host is $diskSizeGB GB, which is greater than the minimum you set of $minDiskSizeGB GB. Proceed!"
 } else {
-  Write-Output "The disk size of this host is $diskSize GB, which is less than the minimum you set of $minDiskSizeGB GB. Do not proceed."
+  Write-Output "The disk size of this host is $diskSizeGB GB, which is less than the minimum you set of $minDiskSizeGB GB. Do not proceed."
 }
