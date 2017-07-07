@@ -14,6 +14,24 @@ This repository is for defenders to harden their sandboxes and AV tools, malware
 
 I want you to **contribute** to this repository to make it truly comprehensive. If your implementation works, I will merge your modules into this repository within **one day**. 
 
+## Adding to your code
+
+Take the checks in the repository and add them to your own custom code. Copy and paste the check itself (along with any required libraries) and use the if-else check to determine if your real code should run. You can, and should, chain more than one check together. Your payload woudl require all checks to pass prior to your real code running. 
+
+**Example:**
+
+```
+import getpass
+import time
+
+expectedUserName = " ".join(sys.argv[1:]).lower()
+
+if getpass.getuser().lower() == expectedUserName:
+  if time.tzname[0] != "Coordinated Universal Time" and time.tzname[1] != "Coordinated Universal Time":
+    # Your code goes here. 
+    # If it passed all checks, it will run!
+```
+
 ## Examples 
 
 **PowerShell**: Confirm that the parent process of your payload was WinWord.exe:
@@ -52,20 +70,4 @@ You know how to run **C** and **C#** code.
 
 Payloads are more commonly being delivered in languages that are not C. In implementing in every language, we give sandbox and antivirus vendors a broader scope from which to detect. In your red teams, any payload you deliver can now be more targeted. 
 
-## Adding to your code
 
-Take the checks in the repository and add them to your own custom code. Copy and paste the check itself (along with any required libraries) and use the if-else check to determine if your real code should run. You can, and should, chain more than one check together. Your payload woudl require all checks to pass prior to your real code running. 
-
-**Example:**
-
-```
-import getpass
-import time
-
-expectedUserName = " ".join(sys.argv[1:]).lower()
-
-if getpass.getuser().lower() == expectedUserName:
-  if time.tzname[0] != "Coordinated Universal Time" and time.tzname[1] != "Coordinated Universal Time":
-    # Your code goes here. 
-    # If it passed all checks, it will run!
-```
