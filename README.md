@@ -54,13 +54,18 @@ Payloads are more commonly being delivered in languages that are not C. In imple
 
 ## Adding to your code
 
-Another way to use CheckPlease is to take the checks that are currently in the repository and add them to your own custom code. You can easily just copy and paste the check itself (along with any required libraries) and use the if-else check to determine if your real code should run. On top of this, you also have the ability to chain more than one check together. This could/would require that all checks must pass prior to your real code running. For example:
+Take the checks in the repository and add them to your own custom code. Copy and paste the check itself (along with any required libraries) and use the if-else check to determine if your real code should run. You can, and should, chain more than one check together. Your payload woudl require all checks to pass prior to your real code running. 
+
+**Example:**
 
 ```
 import getpass
-import os
+import time
 
-if getpass.getuser().lower() == " ".join(sys.argv[1:]).lower():
-    if os.environ['COMPUTERNAME'].lower() == " ".join(sys.argv[1:]).lower():
-        <INSERT REAL CODE HERE>
+expectedUserName = " ".join(sys.argv[1:]).lower()
+
+if getpass.getuser().lower() == expectedUserName:
+  if time.tzname[0] != "Coordinated Universal Time" and time.tzname[1] != "Coordinated Universal Time":
+    # Your code goes here. 
+    # If it passed all checks, it will run!
 ```
