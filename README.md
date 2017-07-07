@@ -2,10 +2,10 @@
 ## Target your payloads.
 The go-to repository for the newest targeted payload and sandbox-detection modules.
 
-Every module functions as a standalone "check." All checks can be run like so:
+Every module functions as a standalone "check." All checks can be run with command-line arguments, like so:
 
 ```
-<language> <module_name> <optional argument>
+<module> <optional arguments>
 ```
 
 This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their paylaods.
@@ -35,7 +35,7 @@ arvanaghi: go run user_prompt.go "This is the box title" "This is the box messag
 **Ruby**: Only execute the payload if running as a specific user:
 
 ```
-arvanaghi: ruby username.rb arvanaghi
+arvanaghi: ruby username.rb "Chris Truncer"
 ```
 
 **Perl**: Make your payload execute on a certain date.
