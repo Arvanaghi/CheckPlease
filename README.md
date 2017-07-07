@@ -18,32 +18,32 @@ I want you to **contribute** to this repository to make it truly comprehensive a
 **PowerShell**: Check that the parent process of your payload was WinWord.exe:
 
 ```powershell
-PS C:\Users\arvanaghi> .\parent_process.ps1 WinWord
+PS arvanaghi: .\parent_process.ps1 WinWord
 
 ```
 
 **Python**: Make the user click 6 times before executing your payload:
 
 ```python
-PS C:\Users\arvanaghi> python click_tracker.py 6
+arvanaghi: python click_tracker.py 6
 ```
 
 **Go**: Ensure there have been at least 4 USB devices ever mounted on the system using Golang:
 
 ```go
-PS C:\Users\arvanaghi> go run usb.go 4 
+arvanaghi: go run usb.go 4 
 ```
 
 **Ruby**: Make the user click a pop-up prompt before executing your payload:
 
 ```ruby
-PS C:\Users\arvanaghi> ruby user_prompt.rb "This is the box title" "This is the box message." 
+arvanaghi: ruby user_prompt.rb "This is the box title" "This is the box message." 
 ```
 
 **Perl**: Make your payload execute on a certain date.
 
 ```perl
-PS C:\Users\arvanaghi> perl date_trigger.pl 09/20/2017
+arvanaghi: perl date_trigger.pl 09/20/2017
 ```
 
 You know how to run **C** and **C#** code.
