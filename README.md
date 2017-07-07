@@ -50,3 +50,13 @@ You know how to run **C** and **C#** code.
 
 Payloads are more commonly being delivered in languages that are not C. In implementing in every language, we give sandbox and antivirus vendors a broader scope from which to detect. In your red teams, any payload you deliver can now be more targeted. 
 
+## Adding to your code
+
+Another way to use CheckPlease is to take the checks that are currently in the repository and add them to your own custom code. You can easily just copy and paste the check itself (along with any required libraries) and use the if-else check to determine if your real code should run. On top of this, you also have the ability to chain more than one check together. This could/would require that all checks must pass prior to your real code running. For example:
+
+```
+import getpass
+
+if getpass.getuser().lower() == " ".join(sys.argv[1:]).lower():
+    <INSERT REAL CODE HERE>
+```
