@@ -1,16 +1,16 @@
 # CheckPlease
-
+## Target your payloads.
 The go-to repository for the newest targeted payload and sandbox-detection modules.
 
-Every module functions as a standalone "check." Unless hard-coded in, all checks can be run like so:
+Every module functions as a standalone "check." All checks can be run like so:
 
 ```
 <language> <module_name> <optional argument>
 ```
 
-This repository is for sandbox vendors to harden their sandboxes, malware researchers to stay up-to-date, and red teamers to get serious their payloads.  
+This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their paylaods.
 
-I want you to **contribute** to this repository to make it truly comprehensive and up-to-date. If your implementation works, I will merge your modules into this repository within **one day**. 
+I want you to **contribute** to this repository to make it truly comprehensive. If your implementation works, I will merge your modules into this repository within **one day**. 
 
 
 ## Examples 
@@ -29,11 +29,11 @@ arvanaghi: python click_tracker.py 6
 
 **Go**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
 
-```Go
+```
 arvanaghi: go run user_prompt.go "This is the box title" "This is the box message." 
 ```
 
-**Ruby*: Ensure there have been at least 4 USB devices ever mounted on the system:
+**Ruby**: Ensure there have been at least 4 USB devices ever mounted on the system:
 
 ```
 arvanaghi: ruby usb.rb 4 
@@ -41,7 +41,7 @@ arvanaghi: ruby usb.rb 4
 
 **Perl**: Make your payload execute on a certain date.
 
-```perl
+```
 arvanaghi: perl date_trigger.pl 09/20/2017
 ```
 
