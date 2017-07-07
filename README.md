@@ -1,7 +1,8 @@
-# CheckPlease
-## Targeted payloads in every language. 
+# CheckPlease - Targeted payloads in every language. 
 
-CheckPlease is the go-to repository for the newest targeted payload and sandbox-detection modules. Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
+Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
+
+CheckPlease is the go-to repository for the newest targeted payload and sandbox-detection modules. 
 
 Every module functions as a standalone "check." All checks can be run with command-line arguments, like so:
 
