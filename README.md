@@ -16,9 +16,9 @@ I want you to **contribute** to this repository to make it truly comprehensive. 
 
 ## Adding to your code
 
-Take the checks in the repository and add them to your own custom code. Copy and paste the check itself (along with any required libraries) and use the if-else check to determine if your real code should run. You can, and should, chain more than one check together. Your payload woudl require all checks to pass prior to your real code running. 
+Take the checks in the repository and add them to your own custom code. Add the checks you want into nested `if` statements. You can, and should, chain more than one together. If the system passes all your checks, your payload will execute. 
 
-**Example:**
+**Example:** ensuring the username is as expected, and the time zone is not UTC:
 
 ```
 import getpass
@@ -28,8 +28,7 @@ expectedUserName = " ".join(sys.argv[1:]).lower()
 
 if getpass.getuser().lower() == expectedUserName:
   if time.tzname[0] != "Coordinated Universal Time" and time.tzname[1] != "Coordinated Universal Time":
-    # Your code goes here. 
-    # If it passed all checks, it will run!
+    # Your code goes here. If it passed all checks, it will run!
 ```
 
 ## Examples 
