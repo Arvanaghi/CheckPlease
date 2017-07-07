@@ -17,20 +17,20 @@ I want you to **contribute** to this repository to make it truly comprehensive a
 
 **PowerShell**: Check that the parent process of your payload was WinWord.exe:
 
-```powershell
+```
 PS arvanaghi: .\parent_process.ps1 WinWord
 
 ```
 
 **Python**: Make the user click 6 times before executing your payload:
 
-```python
+```
 arvanaghi: python click_tracker.py 6
 ```
 
 **Go**: Ensure there have been at least 4 USB devices ever mounted on the system using Golang:
 
-```go
+```
 arvanaghi: go run usb.go 4 
 ```
 
