@@ -19,7 +19,6 @@ I want you to **contribute** to this repository to make it truly comprehensive a
 
 ```
 PS arvanaghi: .\parent_process.ps1 WinWord
-
 ```
 
 **Python**: Make the user click 6 times before executing your payload:
@@ -28,16 +27,16 @@ PS arvanaghi: .\parent_process.ps1 WinWord
 arvanaghi: python click_tracker.py 6
 ```
 
-**Go**: Ensure there have been at least 4 USB devices ever mounted on the system using Golang:
+**Go**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
+
+```Go
+arvanaghi: go run user_prompt.go "This is the box title" "This is the box message." 
+```
+
+**Ruby*: Ensure there have been at least 4 USB devices ever mounted on the system:
 
 ```
-arvanaghi: go run usb.go 4 
-```
-
-**Ruby**: Make the user click a pop-up prompt before executing your payload:
-
-```ruby
-arvanaghi: ruby user_prompt.rb "This is the box title" "This is the box message." 
+arvanaghi: ruby usb.rb 4 
 ```
 
 **Perl**: Make your payload execute on a certain date.
