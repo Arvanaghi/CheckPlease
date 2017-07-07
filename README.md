@@ -56,7 +56,9 @@ Another way to use CheckPlease is to take the checks that are currently in the r
 
 ```
 import getpass
+import os
 
 if getpass.getuser().lower() == " ".join(sys.argv[1:]).lower():
-    <INSERT REAL CODE HERE>
+    if os.environ['COMPUTERNAME'].lower() == " ".join(sys.argv[1:]).lower():
+        <INSERT REAL CODE HERE>
 ```
