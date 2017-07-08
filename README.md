@@ -1,8 +1,16 @@
-# CheckPlease - Targeted payloads in every language. 
+# CheckPlease: Payload-Agnostic Targeted Malware
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
 
-CheckPlease is the go-to repository for the newest targeted payload and sandbox-detection modules. 
+CheckPlease is the go-to repository for the newest targeted payload, sandbox-detection, and implant security modules. Each check is written in:
+
+* PowerShell
+* Python
+* Go
+* Ruby
+* Perl
+* C
+* C#
 
 Every module functions as a standalone "check." All checks can be run with command-line arguments, like so:
 
@@ -10,7 +18,7 @@ Every module functions as a standalone "check." All checks can be run with comma
 <module> <optional arguments>
 ```
 
-This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their paylaods.
+This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their payloadds.
 
 I want you to **contribute** to this repository to make it truly comprehensive. If your implementation works, I will merge your modules into this repository within **one day**. 
 
