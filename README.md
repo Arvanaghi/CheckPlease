@@ -1,4 +1,5 @@
-# CheckPlease: Payload-Agnostic Targeted Malware
+# CheckPlease
+**Payload-Agnostic Implant Security**
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
 
@@ -44,6 +45,7 @@ if getpass.getuser().lower() == expectedUserName:
 ```
 PS arvanaghi: .\parent_process.ps1 WinWord
 ```
+![parent_process.ps1](https://arvanaghi.com/hostedimages/parentprocess_ps.png)
 
 **Python**: Make the user click 6 times before executing your payload to ensure it is not being run in an automated environment:
 
@@ -56,12 +58,14 @@ arvanaghi: python click_tracker.py 6
 ```
 arvanaghi: go run user_prompt.go "This is the box title" "This is the box message." 
 ```
+![user_prompt.go](https://arvanaghi.com/hostedimages/userpromptgo.gif)
 
 **Ruby**: Only execute the payload if running as a specific user:
 
 ```
 arvanaghi: ruby username.rb "Chris Truncer"
 ```
+![username.rb](https://arvanaghi.com/hostedimages/useramerb.png)
 
 **Perl**: Make your payload execute on a certain date.
 
