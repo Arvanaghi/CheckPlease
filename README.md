@@ -20,8 +20,6 @@ Every module functions as a standalone "check." All checks can be run with comma
 
 This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their payloadds.
 
-I want you to **contribute** to this repository to make it truly comprehensive. If your implementation works, I will merge your modules into this repository within **one day**. 
-
 ## Adding to your code
 
 Take the checks in the repository and add them to your own custom code. Add the checks you want into nested `if` statements. You can, and should, chain more than one together. If the system passes all your checks, your payload will execute. 
@@ -77,4 +75,6 @@ You know how to run **C** and **C#** code.
 
 Payloads are more commonly being delivered in languages that are not C. In implementing in every language, we give sandbox and antivirus vendors a broader scope from which to detect. In your red teams, any payload you deliver can now be more targeted. 
 
+## Contribute
 
+I want you to **contribute** to this repository to make it truly comprehensive. If your implementation works, I will merge your modules into this repository within **one day**. 
