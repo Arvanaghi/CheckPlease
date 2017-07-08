@@ -45,7 +45,7 @@ if getpass.getuser().lower() == expectedUserName:
 ```
 PS arvanaghi: .\parent_process.ps1 WinWord
 ```
-![parent_process.ps1](https://arvanaghi.com/hostedimages/parentprocess_ps.png)
+<img src="https://arvanaghi.com/hostedimages/parentprocess_ps.png" width="48">
 
 **Python**: Make the user click 6 times before executing your payload to ensure it is not being run in an automated environment:
 
@@ -58,14 +58,14 @@ arvanaghi: python click_tracker.py 6
 ```
 arvanaghi: go run user_prompt.go "This is the box title" "This is the box message." 
 ```
-![user_prompt.go](https://arvanaghi.com/hostedimages/userpromptgo.gif)
+<img src="https://arvanaghi.com/hostedimages/userpromptgo.gi" width="48">
 
 **Ruby**: Only execute the payload if running as a specific user:
 
 ```
 arvanaghi: ruby username.rb "Chris Truncer"
 ```
-![username.rb](https://arvanaghi.com/hostedimages/useramerb.png)
+<img src="https://arvanaghi.com/hostedimages/usernamerb.png" width="48">
 
 **Perl**: Make your payload execute on a certain date.
 
