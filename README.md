@@ -47,13 +47,11 @@ PS arvanaghi: .\parent_process.ps1 WinWord
 ```
 <img src="https://arvanaghi.com/hostedimages/parentprocess_ps.png" width="450">
 
-```
-
 **PowerShell**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
+```
 .\user_prompt.ps1 "Security Update" "Your system has been updated successfully."
 ```
 <img src="https://arvanaghi.com/hostedimages/userprompt.gif" width="450">
-
 
 **Python**: Make the user click 6 times before executing your payload to ensure it is not being run in an automated environment:
 
