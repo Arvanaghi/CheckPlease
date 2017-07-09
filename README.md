@@ -47,18 +47,25 @@ PS arvanaghi: .\parent_process.ps1 WinWord
 ```
 <img src="https://arvanaghi.com/hostedimages/parentprocess_ps.png" width="450">
 
+```
+
+**PowerShell**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
+.\user_prompt.ps1 "Security Update" "Your system has been updated successfully."
+```
+<img src="https://arvanaghi.com/hostedimages/userprompt.gif" width="450">
+
+
 **Python**: Make the user click 6 times before executing your payload to ensure it is not being run in an automated environment:
 
 ```
 arvanaghi: python click_tracker.py 6
 ```
 
-**Go**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
+**Go**: Ensure the Registry on the target system is at least 60 MB in size:
 
 ```
-arvanaghi: go run user_prompt.go "This is the box title" "This is the box message." 
+arvanaghi: go run registry_size.go 55 
 ```
-<img src="https://arvanaghi.com/hostedimages/userpromptgo.gif" width="450">
 
 **Ruby**: Only execute the payload if running as a specific user:
 
