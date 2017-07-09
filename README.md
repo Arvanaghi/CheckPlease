@@ -3,7 +3,7 @@
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
 
-CheckPlease is the go-to repository for the newest targeted payload, sandbox-detection, and implant security modules. Each check is written in:
+CheckPlease is the go-to repository for the newest implant security, targeted payload, and sandbox-detection modules. Each check is written in:
 
 * PowerShell
 * Python
@@ -79,6 +79,6 @@ You know how to run **C** and **C#** code.
 
 Payloads are more commonly being delivered in languages that are not C. In implementing in every language, we give sandbox and antivirus vendors a broader scope from which to detect. In your red teams, any payload you deliver can now be more targeted. 
 
-## Contribute
+## Contributions Welcome
 
-I want you to **contribute** to this repository to make it truly comprehensive. If your implementation works, I will merge your modules into this repository within **one day**. 
+We encourage contributions to this repository. To make it truly comprehensive, we want the newest techniques added to this repository as soon as possible. If you submit a merge request, I will get it tested within a week.  
