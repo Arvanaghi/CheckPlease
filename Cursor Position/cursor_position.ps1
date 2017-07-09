@@ -1,34 +1,29 @@
 #
-#   Checks if cursor is in same position after sleeping N seconds (default: 20 min), PowerShell
-#   Module written by Brandon Arvanaghi
-#   Website: arvanaghi.com 
-#   Twitter: @arvanaghi
+#	 Checks if cursor is in same position after sleeping N seconds (default: 20 min), PowerShell
+#	 Module written by Brandon Arvanaghi
+#	 Website: arvanaghi.com 
+#	 Twitter: @arvanaghi
 #
+
+Add-Type -AssemblyName System.Windows.Forms
 
 $secs = 1200
 if ($Args.count -eq 1) {
-    $secs = $($args[0])
+	$secs = $($args[0])
 } 
 
-$getCursorPosProto = @'
-[DllImport("user32.dll")]
-public static extern bool GetCursorPos(out System.Drawing.Point point);
-'@
-
-Add-Type -MemberDefinition $getCursorPosProto -Namespace MouseTracker -Name Pos
-
-$point = New-Object System.Drawing.Point
-[void][MouseTracker.Pos]::GetCursorPos([ref]$point)
-Write-Output "x: $($point.x), y: $($point.y)"
+$x1 = [System.Windows.Forms.Cursor]::Position.X
+$y1 = [System.Windows.Forms.Cursor]::Position.Y
+Write-Output "x: $x1, y: $y1"
 
 Start-Sleep $secs
 
-$point2 = New-Object System.Drawing.Point
-[void][MouseTracker.Pos]::GetCursorPos([ref]$point2)
-Write-Output "x: $($point2.x), y: $($point2.y)"
+$x2 = [System.Windows.Forms.Cursor]::Position.X
+$y2 = [System.Windows.Forms.Cursor]::Position.Y
+Write-Output "x: $x2, y: $y2"
 
-if ($point.x - $point2.x -eq 0 -and $point.y - $point2.y -eq 0) {
-    Write-Output "The cursor has not moved in the last $secs seconds. Do not proceed."
+if ($x1 - $x2 -eq 0 -and $y1 - $y2 -eq 0) {
+	Write-Output "The cursor has not moved in the last $secs seconds. Do not proceed."
 } else {
-    Write-Output "The cursor is not in the same position as it was $secs seconds ago. Proceed!"
+	Write-Output "The cursor is not in the same position as it was $secs seconds ago. Proceed!"
 }
