@@ -64,7 +64,7 @@ arvanaghi: python click_tracker.py 6
 **Go**: Ensure the Registry on the target system is at least 60 MB in size:
 
 ```
-arvanaghi: go run registry_size.go 55 
+arvanaghi: go run registry_size.go 60 
 ```
 
 **Ruby**: Only execute the payload if running as a specific user:
