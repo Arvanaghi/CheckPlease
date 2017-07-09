@@ -79,6 +79,6 @@ You know how to run **C** and **C#** code.
 
 Payloads are more commonly being delivered in languages that are not C. In implementing in every language, we give sandbox and antivirus vendors a broader scope from which to detect. In your red teams, any payload you deliver can now be more targeted. 
 
-## Contributions Welcome
+## Contribute
 
 We encourage contributions to this repository. To make it truly comprehensive, we want the newest techniques added to this repository as soon as possible. If you submit a merge request, I will get it tested within a week.  
