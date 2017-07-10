@@ -3,7 +3,7 @@
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
 
-CheckPlease is the go-to repository for the newest implant security, targeted payload, and sandbox-detection modules. Each check is written in:
+CheckPlease is the go-to repository for the newest implant security modules. Each check is written in:
 
 * PowerShell
 * Python
@@ -19,7 +19,7 @@ Every module functions as a standalone "check." All checks can be run with comma
 <module> <optional arguments>
 ```
 
-This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their payloadds.
+This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their payloads.
 
 ## Adding to your code
 
@@ -47,13 +47,11 @@ PS arvanaghi: .\parent_process.ps1 WinWord
 ```
 <img src="https://arvanaghi.com/hostedimages/parentprocess_ps.png" width="450">
 
-```
-
 **PowerShell**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
+```
 .\user_prompt.ps1 "Security Update" "Your system has been updated successfully."
 ```
 <img src="https://arvanaghi.com/hostedimages/userprompt.gif" width="450">
-
 
 **Python**: Make the user click 6 times before executing your payload to ensure it is not being run in an automated environment:
 
@@ -64,7 +62,7 @@ arvanaghi: python click_tracker.py 6
 **Go**: Ensure the Registry on the target system is at least 60 MB in size:
 
 ```
-arvanaghi: go run registry_size.go 55 
+arvanaghi: go run registry_size.go 60 
 ```
 
 **Ruby**: Only execute the payload if running as a specific user:
