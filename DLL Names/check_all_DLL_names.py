@@ -24,7 +24,7 @@ for pid in allPids:
                         if dllName not in EvidenceOfSandbox:
                             EvidenceOfSandbox.append(dllName)
         finally:
-                win32api.CloseHandle(hPid)
+                win32api.CloseHandle(hProcess)
     except:
             pass
 
