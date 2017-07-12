@@ -17,7 +17,7 @@ import (
 func main() {
 
 	var dialogBoxTitle = "CheckPlease by @arvanaghi and @ChrisTruncer";
-	var dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!"
+	var dialogBoxMessage = "This is a sample dialog box to ensure user activity!"
 
 	if (len(os.Args) == 3) {
 		dialogBoxTitle = os.Args[1]

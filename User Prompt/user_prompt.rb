@@ -8,7 +8,7 @@
 require "Win32API"
 
 dialogBoxTitle = "CheckPlease by @arvanaghi and @ChrisTruncer";
-dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!"
+dialogBoxMessage = "This is a sample dialog box to ensure user activity!"
 
 if ARGV.length == 2
   dialogBoxTitle = ARGV[0]

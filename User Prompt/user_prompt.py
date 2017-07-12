@@ -9,7 +9,7 @@ import ctypes
 import sys
 
 dialogBoxTitle = "CheckPlease by @arvanaghi and @ChrisTruncer";
-dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!"
+dialogBoxMessage = "This is a sample dialog box to ensure user activity!"
 
 if len(sys.argv) == 3:
 	dialogBoxTitle = sys.argv[1]

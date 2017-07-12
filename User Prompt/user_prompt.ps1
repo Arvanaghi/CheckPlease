@@ -6,7 +6,7 @@
 #
 
 $dialogBoxTitle = "CheckPlease by @arvanaghi and @ChrisTruncer"
-$dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!"
+$dialogBoxMessage = "This is a sample dialog box to ensure user activity!"
 
 if ($Args.count -eq 2) {
 	$dialogBoxTitle = $($args[0])

@@ -8,7 +8,7 @@
 use Win32;
 
 my $dialogBoxTitle = "CheckPlease by \@arvanaghi and \@ChrisTruncer";
-my $dialogBoxMessage = "This is a sample dialog box to ensure user acitivity!";
+my $dialogBoxMessage = "This is a sample dialog box to ensure user activity!";
 
 if (@ARGV == 2) {
 	$dialogBoxTitle = $ARGV[0];
