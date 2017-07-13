@@ -17,7 +17,7 @@ my @HKLM_Keys_To_Check_Exist = (q{HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 2\\Scsi B
   q{SYSTEM\\CurrentControlSet\\Control\\CriticalDeviceDatabase\\root#vmwvmcihostdev},
   q{SYSTEM\\CurrentControlSet\\Control\\VirtualDeviceDrivers},
   q{SOFTWARE\\VMWare, Inc.\\VMWare Tools},
-  q{SOFTWARE\\Oracle\\Virtual Box Guest Additionas},
+  q{SOFTWARE\\Oracle\\VirtualBox Guest Additions},
   q{HARDWARE\\ACPI\\DSDT\\VBOX_});
 
 my @HKLM_Keys_With_Values_To_Check = (q{SYSTEM\\ControlSet001\\Services\\Disk\\Enum\\0},

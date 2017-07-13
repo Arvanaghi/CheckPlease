@@ -14,7 +14,7 @@ $HKLM_Keys_To_Check_Exist = 'HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Targ
 'SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\root#vmwvmcihostdev',
 'SYSTEM\CurrentControlSet\Control\VirtualDeviceDrivers',
 'SOFTWARE\VMWare, Inc.\VMWare Tools',
-'SOFTWARE\Oracle\Virtual Box Guest Additionas',
+'SOFTWARE\Oracle\VirtualBox Guest Additions',
 'HARDWARE\ACPI\DSDT\VBOX_'
 
 $HKLM_Keys_With_Values_To_Parse = 'SYSTEM\ControlSet001\Services\Disk\Enum\0',
