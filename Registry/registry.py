@@ -17,7 +17,7 @@ r'SYSTEM\CurrentControlSet\Enum\SCSI\Disk&Ven_VMware_&Prod_VMware_Virtual_S',
 r'SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\root#vmwvmcihostdev',
 r'SYSTEM\CurrentControlSet\Control\VirtualDeviceDrivers',
 r'SOFTWARE\VMWare, Inc.\VMWare Tools',
-r'SOFTWARE\Oracle\Virtual Box Guest Additionas',
+r'SOFTWARE\Oracle\VirtualBox Guest Additions',
 r'HARDWARE\ACPI\DSDT\VBOX_']
 
 HKLM_Keys_With_Values_To_Parse = [r'SYSTEM\ControlSet001\Services\Disk\Enum\0',

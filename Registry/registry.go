@@ -25,7 +25,7 @@ func main() {
     `SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\root#vmwvmcihostdev`,
     `SYSTEM\CurrentControlSet\Control\VirtualDeviceDrivers`,
     `SOFTWARE\VMWare, Inc.\VMWare Tools`,
-    `SOFTWARE\Oracle\Virtual Box Guest Additionas`,
+    `SOFTWARE\Oracle\VirtualBox Guest Additions`,
     `HARDWARE\ACPI\DSDT\VBOX_`}
 
     HKLM_Keys_With_Values_To_Parse := [...]string{`SYSTEM\ControlSet001\Services\Disk\Enum\0`,
