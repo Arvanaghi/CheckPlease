@@ -57,6 +57,8 @@ def create_cli_parser():
                            help='Encrypting python code')
     protocols.add_argument('-ps', '--powershell', default=False, action='store_true',
                            help='Encrypting powershell code')
+    protocols.add_argument('-pl', '--perl', default=False, action='store_true',
+                           help='Encrypting perl code')
 
     args = parser.parse_args()
 
@@ -68,7 +70,7 @@ def create_cli_parser():
         print('Error: You need to provide a file containing code to encrypt! Try again')
         sys.exit(1)
 
-    if not args.python and not args.powershell:
+    if not args.python and not args.powershell and not args.perl:
         print('You need to provide a language to encrypt! Try again...')
         sys.exit(1)
 
@@ -127,9 +129,13 @@ if __name__ == '__main__':
     with open(arguments.file, 'rb') as incoming_data:
         encrypt_me = incoming_data.read()
 
+    # add identifier at beginning of code to identify if it was successfully decrypted
+    if arguments.perl:
+        encrypt_me = b'DECRYPTED' + encrypt_me
+
     # pad the source code (data should be in byte format)
     padded_data = encryption_padding(encrypt_me, '&')
-
+    
     # encrypt the padded souce code
     encrypted_data = cipher_object.encrypt(padded_data)
 
@@ -187,6 +193,36 @@ if __name__ == '__main__':
         final_code += '}'
         file_name = 'encrypted.ps1'
 
+    elif arguments.perl:
+        final_code = '#!/usr/bin/env perl\n'
+        final_code += '# Requires Crypt::ECB an Crypt::Cipher::AES\n'
+        final_code += '#\tcpan install Crypt::ECB\n'
+        final_code += '#\tcpan install Crypt::Cipher::AES\n'
+        final_code += 'use MIME::Base64;\n'
+        final_code += 'use Crypt::ECB;\n'
+        final_code += '$encoded_ct = \'' + encoded_ciphertext.decode('ascii') + '\';\n'
+        final_code += '$decoded = decode_base64($encoded_ct);\n'
+        final_code += '$baseKey = \'' + aes_base_key + '\';\n'
+        final_code += '$crypt = Crypt::ECB->new;\n'
+        final_code += '$crypt->cipher("Cipher::AES") || die $crypt->errstring;\n'
+        final_code += '$crypt->padding("none");\n'
+        final_code += 'for (my $x=1000000; $x < 10000000; ++$x) {\n'
+        final_code += '\t$currentKey = $baseKey . $x;\n'
+        final_code += '\t$crypt->key($currentKey);\n'
+        final_code += '\t$decoded_ct = $crypt->decrypt($decoded);\n'
+        final_code += '\tif ($decoded_ct =~ /^DECRYPTED/) {\n'
+        final_code += '\t\t$decoded_ct =~ s/^DECRYPTED//;\n'
+        final_code += '\t\t$decoded_ct =~ s/&+$//;\n'
+        final_code += '\t\t$result = eval {\n'
+        final_code += '\t\t\tno warnings;\n'
+        final_code += '\t\t\tlocal $SIG{__WARN__} = sub {};\n'
+        final_code += '\t\t\tlocal $SIG{__DIE__} = sub{};\n'
+        final_code += '\t\t\teval $decoded_ct;\n'
+        final_code += '\t\t};\n'
+        final_code += '\t\texit 0;\n'
+        final_code += '\t}\n';
+        final_code += '}\n';
+        file_name = 'encrypted.pl'
     print('[*] Writing encrypted file to disk.')
     print('[*] Key used: ' + constrained_key)
 
