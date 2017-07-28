@@ -3,7 +3,7 @@
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer))
 
- ([Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security)) from BSides Las Vegas 2017.
+ [Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security) from BSides Las Vegas 2017.
 
 CheckPlease is the go-to repository for the newest implant security modules. Each check is written in:
 
