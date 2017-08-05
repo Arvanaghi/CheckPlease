@@ -1,5 +1,6 @@
 # CheckPlease
 **Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, and C#.**
+
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer)). 
 
 [Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security) from BSides Las Vegas 2017.
@@ -10,7 +11,9 @@ CheckPlease is the go-to repository for the newest implant security modules. Eve
 <module> <optional arguments>
 ```
 
-This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their payloads. For an explanation of every cheeck in this repository, see the [CheckPlease wiki](https://github.com/Arvanaghi/CheckPlease/wiki).
+This repository is for defenders to harden their sandboxes and AV tools, malware researchers to discover new techniques, and red teamers to get serious about their payloads. 
+
+For an explanation of every cheeck in this repository, see the [CheckPlease wiki](https://github.com/Arvanaghi/CheckPlease/wiki).
 
 ## Examples 
 
