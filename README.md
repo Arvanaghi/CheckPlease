@@ -25,23 +25,6 @@ This repository is for defenders to harden their sandboxes and AV tools, malware
 
 For an explanation of every cheeck in this repository, see the [CheckPlease wiki](https://github.com/Arvanaghi/CheckPlease/wiki).
 
-## Adding to your code
-
-Take the checks in the repository and add them to your own custom code. Add the checks you want into nested `if` statements. You can, and should, chain more than one together. If the system passes all your checks, your payload will execute. 
-
-**Example:** ensuring the username is as expected, and the time zone is not UTC:
-
-```
-import getpass
-import time
-
-expectedUserName = " ".join(sys.argv[1:]).lower()
-
-if getpass.getuser().lower() == expectedUserName:
-  if time.tzname[0] != "Coordinated Universal Time" and time.tzname[1] != "Coordinated Universal Time":
-    # Your code goes here. If it passed all checks, it will run!
-```
-
 ## Examples 
 
 **PowerShell**: Confirm that the parent process of your payload was WinWord.exe:
@@ -83,6 +66,23 @@ arvanaghi: perl date_trigger.pl 09/20/2017
 ```
 
 You know how to run **C** and **C#** code.
+
+## Adding to your code
+
+Take the checks in the repository and add them to your own custom code. Add the checks you want into nested `if` statements. You can, and should, chain more than one together. If the system passes all your checks, your payload will execute. 
+
+**Example:** ensuring the username is as expected, and the time zone is not UTC:
+
+```
+import getpass
+import time
+
+expectedUserName = " ".join(sys.argv[1:]).lower()
+
+if getpass.getuser().lower() == expectedUserName:
+  if time.tzname[0] != "Coordinated Universal Time" and time.tzname[1] != "Coordinated Universal Time":
+    # Your code goes here. If it passed all checks, it will run!
+```
 
 ## Why every language?
 
