@@ -1,6 +1,8 @@
 # CheckPlease
-**Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, and C#.** 
-Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer)). [Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security) from BSides Las Vegas 2017.
+**Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, and C#.**
+Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer)). 
+
+[Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security) from BSides Las Vegas 2017.
 
 CheckPlease is the go-to repository for the newest implant security modules. Every module functions as a standalone "check." All checks can be run with command-line arguments, like so:
 
