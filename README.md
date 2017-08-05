@@ -1,7 +1,6 @@
 # CheckPlease
-**Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, and C#.** Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer)).
-
- [Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security) from BSides Las Vegas 2017.
+**Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, and C#.** 
+Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@ChrisTruncer](https://twitter.com/christruncer)). [Slides](https://www.slideshare.net/BrandonArvanaghi/checkplease-payloadagnostic-implant-security) from BSides Las Vegas 2017.
 
 CheckPlease is the go-to repository for the newest implant security modules. Every module functions as a standalone "check." All checks can be run with command-line arguments, like so:
 
@@ -13,18 +12,18 @@ This repository is for defenders to harden their sandboxes and AV tools, malware
 
 ## Examples 
 
+**PowerShell**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
+```
+.\user_prompt.ps1 "Security Update" "Your system has been updated successfully."
+```
+<img src="https://arvanaghi.com/hostedimages/userprompt.gif" width="450">
+
 **PowerShell**: Confirm that the parent process of your payload was WinWord.exe:
 
 ```
 PS arvanaghi: .\parent_process.ps1 WinWord
 ```
 <img src="https://arvanaghi.com/hostedimages/parentprocess_ps.png" width="450">
-
-**PowerShell**: Ensure user activity by making the user click a pop-up prompt before executing your payload:
-```
-.\user_prompt.ps1 "Security Update" "Your system has been updated successfully."
-```
-<img src="https://arvanaghi.com/hostedimages/userprompt.gif" width="450">
 
 **Python**: Make the user click 6 times before executing your payload to ensure it is not being run in an automated environment:
 
