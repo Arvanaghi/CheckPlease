@@ -1,0 +1,7 @@
+[package]
+name = "file_name_md5"
+version = "0.1.0"
+authors = ["Sam Brown <samdanielbrown@gmail.com>"]
+
+[dependencies]
+rust-crypto = "^0.2"
