@@ -9,7 +9,7 @@ import sys
 import win32com
 from win32com.client import GetObject	
 
-minRegSizeMB = 55
+minRegistrySizeMB = 55
 
 if len(sys.argv) > 1:
 	minRegistrySizeMB	= int(sys.argv[1])
