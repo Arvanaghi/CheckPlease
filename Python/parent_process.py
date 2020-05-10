@@ -15,7 +15,7 @@ expectedParentProc = "firefox"
 if len(sys.argv) == 2:
   expectedParentProc = sys.argv[1]
 
-processes = GetObject("winmgmts:").ExecQuery('SELECT CommandLine from Win32_Process WHERE ProcessID = ' + str(os.getpid())) 
+processes = GetObject("winmgmts:").ExecQuery('SELECT CommandLine from Win32_Process WHERE ProcessID = ' + str(os.getpid()))
 
 for process in processes:
   if expectedParentProc in str(process.Properties_('CommandLine')):
