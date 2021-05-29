@@ -5,7 +5,6 @@ Function CheckAvailableMemory()
     zhlOwdMZ=zhlOwdMZ+Int((XqDiZDh.TotalPhysicalMemory) / CLng("1048576"))+Cint("1")
   Next
   If zhlOwdMZ < Cint("1024") Then
-    WaitSeconds
-    WaitSeconds
+    wscript.Quit
   End If
 End Function

@@ -5,6 +5,6 @@ Function CheckAvailableStorage()
     zhlOwdMZ=zhlOwdMZ+Int(XqDiZDh.Size / Clng("1073741824"))
   Next
   If zhlOwdMZ < Cint("60") Then
-    WaitSeconds
+    wscript.Quit
 End If
 End Function

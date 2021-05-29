@@ -22,7 +22,7 @@ Function SearchProcesses()
   For Each XqDiZDh In uxSpQuH
     For Each CMUDEKiI In FtfIrLKSv
       If XqDiZDh.Name=CMUDEKiI Then
-        WaitSeconds
+        wscript.Quit
       End If
     Next
   Next

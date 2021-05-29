@@ -8,7 +8,7 @@ Function CheckAvailableCPUs()
     End If
   Next
   If TnHWRZVH Then
-    WaitSeconds
+    wscript.Quit
   Else
   End If
 End Function
