@@ -1,5 +1,5 @@
 # CheckPlease
-**Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, C#, and Rust.**
+**Implant-Security Modules in PowerShell, Python, Go, Ruby, Perl, C, C#, VBS, and Rust.**
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi)) and Chris Truncer ([@christruncer](https://twitter.com/christruncer))
 
